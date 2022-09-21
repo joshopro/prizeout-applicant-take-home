@@ -5,7 +5,8 @@ import { PrizeoutOfferViews, selectOffers } from '../../../../slices/offers-slic
 import VerticalOffers from './vertical-offers/vertical-offers';
 
 const DisplayOffers: React.FC = (): React.ReactElement => {
-    const offers = useAppSelector(selectOffers);
+    const offersState = useAppSelector(selectOffers);
+    const { offers } = offersState;
 
     const offerFactory = ({ data, settings, type }: PrizeoutOfferViews) => {
         switch (type) {

@@ -4,6 +4,7 @@ import { PrizeoutOffer, PrizeoutOfferSettings } from '../../../../../slices/offe
 import { OfferGiftCard } from '../offer-gift-card/offer-gift-card';
 
 import './vertical-offers.less';
+import { useOffers } from '../hooks/useOffers';
 
 interface OfferView {
     offers: PrizeoutOffer[];
@@ -15,7 +16,7 @@ const VerticalOffers: React.FC<OfferView> = ({ offers, viewSettings }): React.Re
     const subtitle = viewSettings.subtitle || null;
     const classes: string = Classnames('vertical-offers', { '--has-subtitle': subtitle });
 
-    const offerClickHandler = (offer: PrizeoutOffer) => {};
+    const { offerClickHandler } = useOffers();
 
     const returnOffers = () => {
         return offers.map((offer) => (
