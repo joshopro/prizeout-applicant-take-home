@@ -1,0 +1,38 @@
+@import '../../utils/styles/keyframes.less';
+@import '../../utils/styles/mixins.less';
+@import '../../utils/styles/media-queries.less';
+
+.checkout-panel {
+	.transition();
+	
+	background-color: var(--color-white);
+	overflow-y: auto;
+	
+	&--side {
+		width: var(--panel-width);
+		height: 100%;
+		border-radius: var(--border-radius-secondary) 0 0 var(--border-radius-secondary);
+		box-shadow: -1px 1px 10px rgba(0, 0, 0, 0.1);
+	}
+	
+	// TO DO: responsive bottom panel
+	&--bottom {
+		
+	}
+}
+
+.checkout-panel-view {
+	.transition();
+	
+	display: none;
+	height: 100%;
+	overflow: auto;
+
+	&--active {
+		display: block;
+	}
+	
+	> section {
+		height: 100%;
+	}
+}

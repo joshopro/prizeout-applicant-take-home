@@ -1,0 +1,34 @@
+@import '../../../../../utils/styles/media-queries.less';
+
+.vertical-offers {
+
+	> h2 {
+		margin-bottom: .75rem;
+	}
+
+	> h3 {
+		margin: .25rem 0 .75rem;
+		color: var(--color-grey-700);
+		font-weight: 400;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		max-width: 85%;
+		white-space: nowrap;
+	}
+
+	&.--has-subtitle {
+		> h2 {
+			margin-bottom: 0;
+		}
+	}
+
+	&__gift-cards {
+		display: grid;
+		gap: 1.75rem 2rem;
+		grid-template-columns: repeat(auto-fill, minmax(11.25rem, 1fr));
+
+		@media @mobile-portrait-down {
+			grid-template-columns: repeat(auto-fill, minmax(9.875rem, 1fr));
+		}
+	}
+}
